@@ -12,10 +12,9 @@ my $nc = $k**$n; # Number of combinations
 print "The number of combinations is $nc\n";
 my @zeros = (0) x $n; # Create an array with n zero elements
 
-for $i (0..($nc-1)) { # Initiate matrix with zeros
-  for $j (0..($n-1)) {
-    $matrix[$i][$j] = 0;
-  }
+$i = 0;
+for $j (0..($n-1)) {
+    $matrix[$i][$j] = 0; # First combination
 }
 
 
@@ -37,6 +36,12 @@ for $i (1..($nc-1)) {
 }
 
 for ($i=0;$i<$nc;$i++) {
-  my $r = $matrix[$i];
-  print "@$r\n";
+    print "$_ " foreach(@{$matrix[$i]});
+    print "\n";
 }
+
+print "\n";
+my $rnum = int(rand($nc));
+my @guess_comb = @{$matrix[$rnum]};
+print "$_ " foreach(@guess_comb);
+print "\n";
