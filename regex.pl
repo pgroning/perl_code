@@ -27,6 +27,14 @@ print $str."."."\n";
 $str =~ tr/a-z/a-z/s;
 print $str."."."\n";
 
+print "\n"x2;
+$str = "Cats go Catatonic\nWhen given Catnip";
+
+my ($start) = ($str =~ /\A(.*?)\s+/);
+my @lines = $str =~ /^(.*?) /gm;
+print $str."\n";
+print $start."\n";
+print "@lines\n";
 
 #Regexp symbol matches
 # ^      BOL
