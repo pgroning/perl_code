@@ -3,6 +3,13 @@
 use strict;
 use warnings;
 
+use English;
+
+print $PERL_VERSION . "\n";
+print $] . "\n";
+print $^O . "\n";
+
+print "\n";
 # Examples
 
 my $str = "  hello perl   ";
@@ -35,6 +42,23 @@ my @lines = $str =~ /^(.*?) /gm;
 print $str."\n";
 print $start."\n";
 print "@lines\n";
+
+print "\n";
+my %h = ("Per" => 20, "Jan" => "banan", "Peter" => 0);
+#print sort values %h;
+print $h{'Jan'} . "\n";
+
+print "\n";
+my $res = qx(pwd);
+$res =~ s/\n$//;
+print "$res\n";
+
+
+# <==>
+# redo, last, continue, next
+# goto EXPR
+# tell
+
 
 #Regexp symbol matches
 # ^      BOL
